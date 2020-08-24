@@ -1,14 +1,14 @@
 import firebase from 'firebase'
 
 const firebaseConfig = firebase.initializeApp({
-    apiKey: "AIzaSyAEEatZs5wX3CAWi6bQwG_-2aXQkToETac",
-    authDomain: "facebook-messenger-clone-b2433.firebaseapp.com",
-    databaseURL: "https://facebook-messenger-clone-b2433.firebaseio.com",
-    projectId: "facebook-messenger-clone-b2433",
-    storageBucket: "facebook-messenger-clone-b2433.appspot.com",
-    messagingSenderId: "511101846411",
-    appId: "1:511101846411:web:ad08820106d637ded7258e",
-    measurementId: "G-5LBNFC3GGY"
+    apiKey: "AIzaSyDTSemYSFxLH8kekPvHNPp-r5EcTIeMGe4",
+    authDomain: "little-chat-now.firebaseapp.com",
+    databaseURL: "https://little-chat-now.firebaseio.com",
+    projectId: "little-chat-now",
+    storageBucket: "little-chat-now.appspot.com",
+    messagingSenderId: "1000790721434",
+    appId: "1:1000790721434:web:c4a3a8e87c3776b644b023",
+    measurementId: "G-HQP78RSY3G"
   });
 
   const db = firebase.firestore();

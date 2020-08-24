@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FormControl, Input, FormHelperText } from '@material-ui/core'
+import { FormControl, Input } from '@material-ui/core'
 import Message from './Message/Message'
 import './App.css';
 import db from './firebase';
@@ -43,15 +43,18 @@ function App() {
         <p>★</p>
         <h2>Welcome {username}</h2>
         <p>★</p>
-      </div> 
-      <form className="app__form">
-        <FormControl className="app__formControl">          
-          <Input className="app__input" placeholder="Enter a message" value={ input } onChange={e => setInput(e.target.value)} />
-          <IconButton className="app__iconButton" disabled={!input} onClick={ sendMessage }  color="primary" type="submit" variant="contained">
-            <SendIcon />
-          </IconButton>             
-        </FormControl>                
-      </form>
+      </div>
+      <div className="form__container">
+        <form className="app__form">
+          <FormControl className="app__formControl">          
+            <Input className="app__input" placeholder="Enter a message" value={ input } onChange={e => setInput(e.target.value)} />
+            <IconButton className="app__iconButton" disabled={!input} onClick={ sendMessage }  color="primary" type="submit" variant="contained">
+              <SendIcon />
+            </IconButton>             
+          </FormControl>                
+        </form>
+      </div>
+      
       <FlipMove>
         {
           messages.map(({id, message}) => (

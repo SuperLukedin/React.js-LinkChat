@@ -20,6 +20,10 @@
   font-size: 42px;
 }
 
+.form__container {
+  display: flex;
+  justify-content: center;
+}
 .app__form {
   border-radius: 20px;
   padding: 20px;
@@ -27,14 +31,14 @@
   bottom: 0;
   z-index: 1;
   background-color: #e9e9eb;
-  width: 100%;
+  width: 75%;
   margin: 20px
 }
 
 .app__formControl {
   display: flex !important;
   flex-direction: row !important;
-  width: 90%;
+  width: 100%;
   justify-content: center;
 }
 
