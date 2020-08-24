@@ -1,5 +1,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Little chat screeshot
+![](https://github.com/SuperLukedin/React.js-LittleChat-Homemade/blob/master/screeshot/Main.PNG)
+
 ## Available Scripts
 
 In the project directory, you can run:
