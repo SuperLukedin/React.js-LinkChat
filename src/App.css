@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  color: bisque;
 }
 
 .wechat {
@@ -20,6 +21,7 @@
 }
 
 .app__form {
+  border-radius: 20px;
   padding: 20px;
   position: fixed;
   bottom: 0;
@@ -28,3 +30,19 @@
   width: 100%;
   margin: 20px
 }
+
+.app__formControl {
+  display: flex !important;
+  flex-direction: row !important;
+  width: 90%;
+  justify-content: center;
+}
+
+.app__input {
+  flex: 1;
+}
+
+.app__iconButton {
+  flex: 0;
+}
+

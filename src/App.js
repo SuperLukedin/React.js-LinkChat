@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Button, FormControl, InputLabel, Input, FormHelperText } from '@material-ui/core'
+import { FormControl, Input, FormHelperText } from '@material-ui/core'
 import Message from './Message/Message'
 import './App.css';
 import db from './firebase';
@@ -37,7 +37,7 @@ function App() {
 
   return (
     <div className="App">
-      <img className="wechat" src="https://cdn.cjr.org/wp-content/uploads/2017/10/Untitled-1-500x500.jpg" alt=""/>
+      <img className="wechat" src="https://is1-ssl.mzstatic.com/image/thumb/Purple124/v4/2f/e6/93/2fe693f7-eb2c-d356-61e7-0778b487289e/AppIcon-85-220-0-4-2x.png/246x0w.png" alt=""/>
       <h1>Little Chat</h1>
       <div className="welcome">
         <p>★</p>
@@ -45,10 +45,9 @@ function App() {
         <p>★</p>
       </div> 
       <form className="app__form">
-        <FormControl>
-          <InputLabel>Enter a message...</InputLabel>
-          <Input value={ input } onChange={e => setInput(e.target.value)} />
-          <IconButton disabled={!input} onClick={ sendMessage }  color="primary" type="submit" variant="contained">
+        <FormControl className="app__formControl">          
+          <Input className="app__input" placeholder="Enter a message" value={ input } onChange={e => setInput(e.target.value)} />
+          <IconButton className="app__iconButton" disabled={!input} onClick={ sendMessage }  color="primary" type="submit" variant="contained">
             <SendIcon />
           </IconButton>             
         </FormControl>                
