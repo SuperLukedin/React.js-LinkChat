@@ -7,16 +7,25 @@ import firebase from 'firebase'
 import FlipMove from 'react-flip-move'
 import SendIcon from '@material-ui/icons/Send';
 import { IconButton } from '@material-ui/core';
+import { usePageVisibility } from './visibility/visHook'
 
 function App() {
   const [input, setInput] = useState('')
   const [messages, setMessages] = useState([])
   const [username, setUsername] = useState('')
+  const isVisible = usePageVisibility()
+  // const [counter, setCounter] = useState(0)
+
+  // if (isVisible) {
+  //   document.title = 'Link Chat';
+  // } else {
+  //   document.title = 'Unread';
+  // }
 
   useEffect(() => {
     db.collection('messages')
     .orderBy('timestamp', 'desc')
-    .onSnapshot(snapshot => {
+    .onSnapshot(snapshot => {      
       setMessages(snapshot.docs.map(doc => ({id: doc.id, message: doc.data()})))
     })
   }, [])
@@ -30,6 +39,7 @@ function App() {
     db.collection('messages').add({
       message: input,
       username: username,
+      localTime: new Date().toLocaleString().split(',')[1],
       timestamp: firebase.firestore.FieldValue.serverTimestamp()
     })    
     setInput('')
@@ -38,7 +48,7 @@ function App() {
   return (
     <div className="App">
       <img className="wechat" src="https://is1-ssl.mzstatic.com/image/thumb/Purple124/v4/2f/e6/93/2fe693f7-eb2c-d356-61e7-0778b487289e/AppIcon-85-220-0-4-2x.png/246x0w.png" alt=""/>
-      <h1>Little Chat</h1>
+      <h1>Link Chat</h1>
       <div className="welcome">
         <p>★</p>
         <h2>Welcome {username}</h2>
@@ -58,7 +68,7 @@ function App() {
       <FlipMove>
         {
           messages.map(({id, message}) => (
-            <Message key={id} username={ username } message={ message }/>      
+            <Message key={id} username={ username } message={ message } />      
           ))
         }
       </FlipMove>  

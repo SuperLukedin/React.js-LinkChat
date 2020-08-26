@@ -17,3 +17,11 @@
 .message__guestCard {
     background-color: #e9e9eb !important; 
 }
+.localTime__container {
+    display: flex;
+    justify-content: left;
+}
+.localTime {
+    margin: 0 0;
+    color: gold;
+}

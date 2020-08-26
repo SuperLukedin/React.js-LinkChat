@@ -17,7 +17,10 @@ const Message = forwardRef((props, ref) => {
                         {!isUser && `${props.message.username || 'Unknown User'}: `} {props.message.message}
                     </Typography>
                 </CardContent>
-            </Card>            
+            </Card>
+            <div className="localTime__container">
+                <p className="localTime">{ props.message.localTime }</p>
+            </div>         
         </div>
     )
 })
