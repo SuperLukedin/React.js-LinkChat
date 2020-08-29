@@ -14,13 +14,14 @@ function App() {
   const [messages, setMessages] = useState([])
   const [username, setUsername] = useState('')
   const isVisible = usePageVisibility()
-  // const [counter, setCounter] = useState(0)
-
-  // if (isVisible) {
-  //   document.title = 'Link Chat';
-  // } else {
-  //   document.title = 'Unread';
-  // }
+  
+  useEffect(() => {
+    if (!isVisible) {
+      document.title = '🔴 unread'
+    } else {
+      document.title = 'Link chat'
+    }
+  }, [messages])
 
   useEffect(() => {
     db.collection('messages')
